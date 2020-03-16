@@ -3,7 +3,7 @@ module.exports = async ({ actions, graphql }) => {
     // Set up our query
     const GET_POSTS = graphql`
         query GET_POSTS($first:Int $after:String) {
-            wpgraphql {
+            wpgql {
                 posts(
                     first: $first
                     after: $after
@@ -29,7 +29,7 @@ module.exports = async ({ actions, graphql }) => {
     const fetchPages = async variables =>
         await graphql(GET_POSTS, variables).then(({ data }) => {
             const {
-                wpgraphql: {
+                wpgql: {
                     posts: {
                         nodes,
                         pageInfo: { hasNextPage, endCursor },

@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 const Page = props => {
     const {
         data: {
-            wpgraphql: { page },
+            wpgql: { page },
         },
     } = props
     const { title , content } = page
@@ -20,7 +20,7 @@ export default Page
 
 export const pageQuery = graphql`
     query GET_PAGE($id: ID!) {
-        wpgraphql {
+        wpgql {
             page(id: $id) {
                 title
                 content

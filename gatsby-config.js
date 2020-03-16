@@ -9,8 +9,8 @@ module.exports = {
     {
       resolve: `gatsby-source-graphql`,
       options: {
-        typeName: `WPGRAPHQL`,
-        fieldName: `wpgraphql`,
+        typeName: `WPGQL`,
+        fieldName: `wpgql`,
         url: `http://webjigsaw.net/graphql`,
       },
     },
