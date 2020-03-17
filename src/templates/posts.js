@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Pagination from '../components/pagination'
 
 const Posts = props => {
     const {
@@ -16,6 +17,7 @@ const Posts = props => {
             {posts.nodes.map(post =>
                 <h2 key={post.id}>{post.title}</h2>
             )}
+            <Pagination pageNumber={pageNumber} hasNextPage={hasNextPage} />
         </div>
     )
 }

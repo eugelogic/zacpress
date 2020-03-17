@@ -60,13 +60,13 @@ module.exports = async ({ actions, graphql }) => {
             })
             if (hasNextPage) {
                 pageNumber++
-                return fetchPosts({ first: 12, after: endCursor })
+                return fetchPosts({ first: 6, after: endCursor })
             }
             return allPosts
         })
 
     // Map over all the posts and call createPage
-    await fetchPosts({ first: 12, after: null }).then(allPosts => {
+    await fetchPosts({ first: 6, after: null }).then(allPosts => {
         const postTemplate = path.resolve(`./src/templates/post.js`)
 
         blogPages.map(page => {
