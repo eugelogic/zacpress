@@ -1,7 +1,7 @@
 const path = require(`path`)
 module.exports = async ({ actions, graphql }) => {
     // Set up our query
-    const GET_CATEGORIES = graphql`
+    const GET_CATEGORIES = `
         query GET_CATEGORIES($first:Int) {
             wpgql {
                 categories(first: $first) {
