@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
+import { createLocalLink } from '../utils'
 
 const MAIN_MENU_QUERY = graphql`
     fragment MenuFields on WPGQL_MenuItem {
@@ -31,7 +32,7 @@ const renderMenuItem = item => {
     }
     return (
         <li key={item.id}>
-            <Link to={item.url}>{item.label}</Link>
+            <Link to={createLocalLink(item.url)}>{item.label}</Link>
             {hasChild && renderChildMenu(item)}
         </li>
     )
