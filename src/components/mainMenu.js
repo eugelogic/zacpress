@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import { createLocalLink } from '../utils'
+import '../style/style.css'
 
 const MAIN_MENU_QUERY = graphql`
     fragment MenuFields on WPGQL_MenuItem {
@@ -57,7 +58,7 @@ const MainMenu = props => {
         }) => {
             console.log(menu)
             return (
-                <nav>
+                <nav className="main-menu">
                     <ul>
                         {menu.map(item => renderMenuItem(item))}
                     </ul>
