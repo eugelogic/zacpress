@@ -16,6 +16,7 @@ module.exports = async ({ actions, graphql }) => {
                         hasNextPage
                     }
                     nodes {
+                        isFrontPage
                         id
                         uri
                         pageId
@@ -53,6 +54,7 @@ module.exports = async ({ actions, graphql }) => {
         const pageTemplate = path.resolve(`./src/templates/page.js`)
 
         allPages.map( page => {
+            if (page.isFrontPage === true) page.uri = ``
             console.log(`create page: ${page.uri}`)
             createPage({
                 path: `/${page.uri}`,
