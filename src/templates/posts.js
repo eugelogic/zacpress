@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Pagination from '../components/pagination'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const Posts = props => {
     const {
@@ -14,6 +15,7 @@ const Posts = props => {
     const currentPage = pageNumber ? `- Page ${pageNumber}` : ``
     return (
         <Layout>
+            <SEO title={`Blog Archive`} />
             <h1>Blog Archive {currentPage}</h1>
             {posts.nodes.map(post =>
                 <h2 key={post.id}>{post.title}</h2>

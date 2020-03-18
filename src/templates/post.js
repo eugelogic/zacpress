@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const Post = props => {
     const {
@@ -12,6 +13,7 @@ const Post = props => {
 
     return (
         <Layout>
+            <SEO title={title} />
             <h1>{title}</h1>
             <ul className="meta">
                 <li>
