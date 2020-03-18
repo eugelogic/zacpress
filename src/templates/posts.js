@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Pagination from '../components/pagination'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -18,7 +18,9 @@ const Posts = props => {
             <SEO title={`Blog Archive`} />
             <h1>Blog Archive {currentPage}</h1>
             {posts.nodes.map(post =>
-                <h2 key={post.id}>{post.title}</h2>
+                <h2 key={post.id}>
+                    <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+                </h2>
             )}
             <Pagination pageNumber={pageNumber} hasNextPage={hasNextPage} />
         </Layout>
@@ -34,6 +36,7 @@ export const pageQuery = graphql`
                 nodes {
                     id
                     title
+                    slug
                 }
             }
         }
