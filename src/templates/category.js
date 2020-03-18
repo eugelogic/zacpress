@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import ArchivePosts from '../components/archivePosts'
 
 const CategoryTemplate = props => {
     const {
@@ -8,10 +9,11 @@ const CategoryTemplate = props => {
             wpgql: { category },
         },
     } = props
-    const { name } = category
+    const { name, posts } = category
     return (
         <Layout>
             <h1>Category: {name}</h1>
+            <ArchivePosts posts={posts} />
         </Layout>
     )
 }
@@ -25,6 +27,13 @@ export const pageQuery = graphql`
                 id
                 name
                 slug
+                posts {
+                    nodes {
+                        postId
+                        title(format: RENDERED)
+                        slug
+                    }
+                }
             }
         }
     }
