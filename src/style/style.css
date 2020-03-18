@@ -34,3 +34,30 @@
     background-color: rebeccapurple;
     border: 1px rebeccapurple solid;
 }
+
+.meta {
+    border-bottom: 1px #ccc solid;
+    padding: 0 0 1rem 0;
+    margin: 0 0 1rem 0;
+    font-size: .8rem;
+}
+
+.meta ul,
+.meta li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline;
+}
+
+.meta ul {
+    padding-left: 5px;
+}
+
+.meta ul li + li:before {
+    content: ", ";
+}
+
+.meta ul li:first-of-type:before {
+    content: "" !important;
+}
