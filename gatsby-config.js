@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `GatsbyPress with Zac`,
+    title: `STAGE - GatsbyPress with Zac`,
     description: `Headless WordPress with Gatsby by Zac Gordon based on Gatsby default starter.`,
     author: `@EugeneMolari`,
   },
