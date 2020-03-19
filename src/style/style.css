@@ -35,7 +35,7 @@
     border: 1px rebeccapurple solid;
 }
 
-.meta {
+.post.meta {
     border-bottom: 1px #ccc solid;
     padding: 0 0 1rem 0;
     margin: 0 0 1rem 0;
@@ -69,6 +69,28 @@
 }
 
 .comment .meta {
-    border-bottom: none;
     font-size: .6rem;
+}
+
+#comment-form label {
+    display: block;
+}
+
+#comment-form #comment-field {
+    width: 100%;
+    min-height: 5rem;
+}
+
+#comment-form .meta {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#comment-form .meta p {
+    width: 48%;
+}
+
+#comment-form .meta input {
+    width: 100%;
 }

@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Comments from '../components/comments'
+import CommentForm from '../components/commentForm'
 
 const Post = props => {
     const {
@@ -16,7 +17,7 @@ const Post = props => {
         <Layout>
             <SEO title={title} />
             <h1>{title}</h1>
-            <ul className="meta">
+            <ul className="post meta">
                 <li>
                     Author: <Link to={`/user/${author.slug}`}>{author.name}</Link>
                 </li>
@@ -45,6 +46,7 @@ const Post = props => {
             </ul>
             <div dangerouslySetInnerHTML={{ __html: content }}></div>
             <Comments post={post} />
+            <CommentForm />
         </Layout>
     )
 }
