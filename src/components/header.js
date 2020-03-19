@@ -6,7 +6,7 @@ import MainMenu from "./mainMenu"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `green`,
+      background: `black`,
       marginBottom: `1.45rem`,
     }}
   >
