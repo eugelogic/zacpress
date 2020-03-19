@@ -11,7 +11,7 @@ module.exports = {
       options: {
         typeName: `WPGQL`,
         fieldName: `wpgql`,
-        url: `http://webjigsaw.net/graphql`,
+        url: `https://webjigsaw.net/graphql`,
       },
     },
     {
