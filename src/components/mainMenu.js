@@ -12,7 +12,7 @@ const MAIN_MENU_QUERY = graphql`
 
     query GET_MENU_ITEMS {
         wpgql {
-            menuItems(where: {location: TOP}) {
+            menuItems(where: {location: PRIMARY}) {
                 nodes {
                     ...MenuFields
                     childItems {
