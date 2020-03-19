@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Comments from '../components/comments'
 
 const Post = props => {
     const {
@@ -43,6 +44,7 @@ const Post = props => {
                 </li>
             </ul>
             <div dangerouslySetInnerHTML={{ __html: content }}></div>
+            <Comments post={post} />
         </Layout>
     )
 }
@@ -50,6 +52,20 @@ const Post = props => {
 export default Post
 
 export const pageQuery = graphql`
+fragment CommentFields on WPGQL_Comment {
+    date
+    id
+    author {
+        ... on WPGQL_CommentAuthor {
+            id
+            email
+            name
+        }
+    }
+    commentId
+    content(format: RENDERED)
+}
+
     query GET_POST($id: ID!) {
         wpgql {
             post(id: $id) {
@@ -70,6 +86,16 @@ export const pageQuery = graphql`
                     nodes {
                         name
                         slug
+                    }
+                }
+                comments {
+                    nodes {
+                        ...CommentFields
+                        children {
+                            nodes {
+                                ...CommentFields
+                            }
+                        }
                     }
                 }
             }

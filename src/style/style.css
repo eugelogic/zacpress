@@ -61,3 +61,14 @@
 .meta ul li:first-of-type:before {
     content: "" !important;
 }
+
+.comment {
+    margin: 2rem 0;
+    padding: 1rem 2rem 0 2rem;
+    border: 1px #ccc solid;
+}
+
+.comment .meta {
+    border-bottom: none;
+    font-size: .6rem;
+}
